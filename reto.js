@@ -20,7 +20,7 @@ ref.onAuth(function(authData) {
         // user is logged out
         document.querySelector('.overlay').classList.remove('dontDisplay');
         document.querySelector('.wrapper').classList.add("blur");
-        document.querySelector('header').classList.add("blur");
+        document.querySelector('.header').classList.add("blur");
     }
 });
 
