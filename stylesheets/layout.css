@@ -1,0 +1,574 @@
+/*
+* Theme Name: Love is - One Page Responsive Wedding Template
+* Author: lmtheme (Linar Miftakhov)
+* Author URL: http://themeforest.net/user/lmtheme
+* Version: 1.0
+*/
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	ol, ul {
+		list-style: none; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+		
+/* ============================================================================= 
+1. General 
+============================================================================= */
+body{
+	font-family: 'Open Sans', "Helvetica Neue", Arial, Helvetica, FreeSans, sans-serif;
+	background-color:#FFF;
+	font-weight: 400;
+	font-size: 14px;
+	color: #704f55;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	overflow: auto;
+	padding:0;
+	margin:0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Open Sans', Georgia, Times, serif;
+	color:#3d1f24;
+	margin-top:0;
+	margin-bottom:10px;	
+	font-weight: normal;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { font-size: 42px; line-height: 46px; margin-bottom: 14px;}
+h2 { font-size: 32px; line-height: 37px; margin-bottom: 10px; }
+h3 { font-size: 25px; line-height: 31px; margin-bottom: 8px; }
+h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+h5 { font-size: 17px; line-height: 24px; }
+h6 { font-size: 14px; line-height: 21px; }
+p {
+	font-size:13px;
+	line-height:20px;
+}
+a{
+	color: #9bcbcf;
+	text-decoration: none;
+}
+em { font-style: italic; }
+strong { font-weight: bold; color: #333; }
+small { font-size: 80%; }
+
+header {
+	background-color:#F2798F;
+}
+.wrapper {
+	margin-top:60px;
+}
+.slide{
+	width:100%;
+	position: relative;
+}
+
+.main_title {
+	margin-top:30px;
+	margin-bottom:45px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:70px;
+	line-height: 75px;
+	color:#F2798F;
+}
+
+.subpage_title {
+	margin-top:40px;
+	margin-bottom:45px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:46px;
+	line-height:50px;
+	color:#F2798F;
+}
+/* Our Story Name Title */
+.our_story_title {
+	margin-top:0px;
+	margin-bottom:20px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:35px;
+	line-height:40px;
+	color:#3d1f24;
+}
+
+
+/* ============================================================================= 
+2. Navigation Menu
+============================================================================= */
+.menu {
+	position:fixed;
+	display: block;
+	text-align:center;
+	top:0px;
+	width:100%; 
+	height: 60px;
+	z-index:11100;
+	background-color:#F2798F;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .2);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .2);
+}
+
+#nav {
+	margin: 0;
+	display: inline-block;
+}
+.navigation{
+	list-style: none;
+	margin: 20px auto;
+	display: block;
+	text-align: center;
+	padding: 0;
+}
+
+.navigation li{
+	display: inline-block;
+	padding: 0 20px;
+	font-size:15px;
+	color:#FFF;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.navigation li:hover{
+	cursor:pointer;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+#nav .current {
+	display: none;
+}
+	
+
+/* ============================================================================= 
+3. Subpages
+============================================================================= */	
+	
+/* ===================================== 
+3.1 Home Subpage
+===================================== */	
+#home {
+	height:850px;
+	background-image: url(../images/bg.png);
+	border-bottom:15px solid #fce4e9;
+}
+.top_titles {
+	margin-top:100px;
+}
+.header_title {
+	margin-top:0px;
+	text-align:center;
+	font-size:35px;
+	line-height:50px;
+	font-family:'Pacifico', Georgia, Times, serif;
+	margin-bottom:10px;
+	color:#3d1f24;
+}
+.main_photos {
+	display:				block;
+	text-align: 			center;
+}
+.main_photos_ul ul {
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	outline: none;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.main_photos_ul li {
+	display:inline;
+}
+.main_photos_ul li img {
+ 	width:300px;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+    box-shadow: 0 0 0 15px rgba(242, 121, 143, .2);
+}
+.main_photos_ul li.heart img {
+	position:relative;
+	width:100px;
+	border:none;
+	background:none;
+	margin-right:-35px;
+	margin-left:-35px;
+	margin-bottom:120px;
+	box-shadow:none;
+}
+
+
+/* ===================================== 
+3.2 Our Story Subpage
+===================================== */
+#our_story {
+	border-bottom:15px solid #fce4e9;
+	padding-bottom:40px;
+}
+.our_story_photo{
+	margin:0 auto;
+	width:80%;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+	background: rgba(242, 121, 143, .2);
+	padding:15px;
+}
+.our_story_photo img{
+	width:100%;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+}
+.our_story_info {
+	text-align:center;
+}
+
+
+/* ===================================== 
+3.3 Wedding Events Subpage
+===================================== */
+#wedding_events {
+	background-image: url(../images/bg.png);
+	border-bottom:15px solid #fce4e9;
+	padding-bottom:40px;
+}
+.wedding_events {
+	display:block;
+	margin:0 auto;
+	text-align:center;
+}
+.wedding_events_photo{
+	margin:0 auto;
+	width:55%;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+	background: rgba(242, 121, 143, .2);
+	padding:15px;
+	margin-bottom:30px;
+}
+.wedding_events_photo img{
+	width:100%;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+}
+.wedding_events_title {
+	margin-top:0px;
+	margin-bottom:20px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:35px;
+	line-height:40px;
+	color:#3d1f24;
+}
+.wedding_events_info {
+	text-align:center;
+	-webkit-border-radius:1000px;-moz-border-radius:1000px;border-radius:1000px;
+
+}
+.wedding_events_info  h3{
+    font-size:17px;
+	line-height:24px;
+	color:#704f55;
+}
+
+
+/* ===================================== 
+3.4 Photos Subpage
+===================================== */
+#photos {
+	border-bottom:15px solid #fce4e9;
+	padding-bottom:40px;	
+}
+
+
+/* ===================================== 
+3.5 Contacts Subpage
+===================================== */
+#contacts {
+	background-image: url(../images/bg.png);
+	padding-bottom:20px;
+}
+#contactform{
+	margin-top:-7px;
+	margin-left:-10px;
+}
+.info_fieldset{
+	padding:0;
+	margin:0;
+	bottom:5px;
+	background: none; 
+	border: 0px;
+}	
+label	{float:left;width:100%;padding:0 0 2px;}
+input[type="text"] 
+textarea	{width:100%;}
+input[type="submit"]	{padding:0;width:100%;margin:5px 0 0;}
+/*FORM ELEMENTS*/
+label { 
+    cursor: pointer;
+	margin-top:7px;
+	margin-bottom:5px;
+	font-family:'Open Sans', "Helvetica Neue", Arial, Helvetica, FreeSans, sans-serif;
+	font-size:15px;
+	font-style:normal;
+	font-weight:400;
+	color: #3d1f24;
+}
+input,textarea {outline: none;}
+button, input, select, textarea { 
+    margin: 0;
+	margin-bottom:10px; 
+	vertical-align: baseline; 
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] { 
+    cursor: pointer; 
+	-webkit-appearance: button; 
+}
+input[type="text"] {
+	border:1px solid #d5d5d5;
+	font:normal 13px;
+	color:#999;
+	padding:3px 5px;
+	width:100%;
+}
+textarea {
+	border:1px solid #d5d5d5;
+	font:normal 13px;
+	color:#999;
+	padding:3px 5px;
+	width:100%;
+	resize: none;
+}
+input[type="text"]:focus,
+textarea:focus{
+	border-color:#F2798F;
+	-webkit-transition: 	all .10s ease-in;
+	-moz-transition:		all .10s ease-in;
+	-o-transition:			all .10s ease-in;
+	transition: 			all .10s ease-in;
+}
+/* Submit Button */
+input[type="submit"] 		{
+	color:#FFF;
+	width:140px;
+	float:right;
+	font-family:'Open Sans', "Helvetica Neue", Arial, Helvetica, FreeSans, sans-serif;
+	font-size:15px;
+	margin-top:10px;
+	margin-right:-10px;
+	background-color:#F2798F;
+	-webkit-border-radius:25px;-moz-border-radius:25px;border-radius:25px;
+	padding:6px 10px;
+	box-shadow:none;
+	border:none;
+}
+input[type="submit"]:hover 		{
+	background:#704f55;
+	-webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+     -o-transition: all 0.2s linear;
+     transition: all 0.2s linear;
+}
+/* CSS for Error notification */
+.notification_error{
+    border: 1px solid #f1dfc5;
+	width:100%;
+    height: auto;
+	color: #ca5702;
+    padding: 5px;
+    margin: 10px auto;
+    text-align:left;
+    -webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;
+    margin-bottom:5px;
+}
+/* CSS for Successfully sent notification */
+.notification_ok{
+    border: 1px #cbcf8e solid;
+	width:100%;
+    height: auto;
+	padding: 5px;
+    margin:0 auto;
+    background: #f5f9fd;
+	-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;
+	margin-bottom:5px;
+}
+/* Social Icons */
+.social_icons {
+	display:				block;
+	float:right;
+	margin-top:60px;
+}
+.social_icons ul{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	outline: none;
+	margin-bottom:10px;
+}
+.social li{
+	display:inline;
+	margin-right:5px;
+}
+.social li a {
+	outline: 0;
+}
+.social img {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.social img:hover {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+
+/* ============================================================================= 
+4. Media Queries 
+============================================================================= */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+		}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+	}
+	
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+	.main_title {
+	margin-top:30px;
+	margin-bottom:45px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:45px;
+	line-height: 48px;
+	color:#F2798F;
+    }
+	.header_title {
+	margin-top:0px;
+	text-align:center;
+	font-size:24px;
+	line-height:38px;
+	font-family:'Pacifico', Georgia, Times, serif;
+	margin-bottom:0px;
+	color:#3d1f24;
+	}
+    .subpage_title {
+	margin-top:20px;
+	margin-bottom:25px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:35px;
+	line-height:38px;
+	color:#F2798F;
+    }
+	.top_titles {
+	margin-top:20px;
+    }
+	#nav {
+	position: absolute;
+	min-height: 40px;
+	}	
+	#nav ul {
+	width: 150px;
+	margin:11px auto;
+	padding: 5px 0;
+	position: absolute;
+	background: #fce4e9 url(../images/mobile_menu/open.png) no-repeat 8px 2px;
+	-webkit-border-radius:25px;-moz-border-radius:25px;border-radius:25px;
+	}
+	#nav li {
+	display: none; /* hide all <li> items */
+	margin: 0;
+	color:#3d1f24;
+	padding:5px 0 5px 0;
+	}
+	#nav .current {
+	display: block; /* show only current <li> item */
+	color:#704f55;
+	}
+	/* on nav hover */
+	#nav ul:hover {
+	background-image: none;
+	}
+	#nav ul:hover li {
+	display: block;
+	margin: 0 0 10px;
+	}
+	#nav ul:hover .current {
+	background: url(../images/mobile_menu/open.png) no-repeat 8px -3px;
+	color:#704f55;
+	}
+	#home {
+	height:auto;
+	background-image: url(../images/bg.png);
+	border-bottom:15px solid #fce4e9;
+	padding-bottom:40px;
+    }
+	.main_photos_ul li {
+	display:inline;
+    }
+    .main_photos_ul li img {
+ 	width:85%;
+    }
+	.main_photos_ul li.heart img {
+	margin-right:0px;
+	margin-left:0px;
+	margin-top:15px;
+	margin-bottom:20px;
+    }
+    .our_story_title {
+	margin-top:0px;
+	margin-bottom:20px;
+	text-align:center;
+	font-family:'Pacifico', Georgia, Times, serif;
+	font-size:24px;
+	line-height:28px;
+	color:#3d1f24;
+    }
+	#our_story {
+	height:auto;
+	background-image: url(../images/bg.png);
+	border-bottom:15px solid #fce4e9;
+	padding-bottom:40px;
+    }
+    .our_story_photo{
+	width:90%;
+	margin-top:20px;
+	margin-bottom:20px;	
+    }
+	.wedding_events_info {
+	margin-bottom:20px;
+    }
+	#photos img {
+	margin-bottom:20px;
+	}
+	}
+	
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    }
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+
+	}
