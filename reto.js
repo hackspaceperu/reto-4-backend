@@ -1,45 +1,35 @@
-var ref = new Firebase("https://rocola-hackspace.firebaseio.com");
+var ref = new Firebase("https://reto-3-backend.firebaseio.com");
 ref.onAuth(function(authData) {
-    console.log( "authData" );
     if (authData) {
         // user authenticated with Firebase
         document.querySelector('.overlay').classList.add('dontDisplay');
         document.querySelector('.wrapper').classList.remove("blur");
+        document.querySelector('header').classList.remove("blur");
 
-        document.querySelector('.avatar img')
-            .setAttribute("src", findProfilePic(authData));
 
-        if(findFullName(authData) == "Pedro Palacios Avila")
-            window.location = "http://www.google.com";
-        
-        document.querySelector('.user span').innerHTML = findFullName(authData);
+        howToGetProfilePic = findProfilePic(authData);
+        howToGetFullName = findFullName(authData);
 
-        document.querySelector('.settings').addEventListener('click', function(event){
+        document.querySelector('.logout').addEventListener('click', function(event){
             ref.unauth();  
         });
-        console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
-        console.log(authData);
-        
+
+        // save the user 
         ref.child('users').child(authData.uid).set(authData);
     } else {
         // user is logged out
         document.querySelector('.overlay').classList.remove('dontDisplay');
         document.querySelector('.wrapper').classList.add("blur");
-        document.querySelector('.avatar img')
-            .setAttribute("src", "img/abeja.png");
-        document.querySelector('.user span').innerHTML = "Hack Space";
-        document.querySelector('.settings').classList.remove("visible");
+        document.querySelector('header').classList.add("blur");
     }
 });
 
-console.log('login is there');
 document.querySelector('.fa-facebook-square').addEventListener('click', function(){
-    console.log("facebook");
     userLogin("facebook");
 });
-document.querySelector('.fa-twitter-square').addEventListener('click', function(){
-    userLogin("twitter");
-});
+// document.querySelector('.fa-twitter-square').addEventListener('click', function(){
+//     userLogin("twitter");
+// });
 
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){

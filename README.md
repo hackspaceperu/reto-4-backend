@@ -44,18 +44,36 @@ lectura, más informacioón en la
 
 ## Haciendo una página web para Manuel@ (O tu persona especial de elección)
 
-### Creando tu app de firebase
+### Creando tu Firebase App
+
+Ya cubrieron esto en el reto anterior ahora sólo tendrán que tener en
+cuenta que su app tiene que tener un dominio, al cual se harán las
+cosas de OAuth, así que tendrán que configurar eso en Firebase.
+
+Basta con poner el URL que usarán para su web en este campo, nosotros
+estamos usando github-pages para este ejemplo así que se ve así:
+
+![logo](docImg/firebase_domain.png)
+
+Ojo que es muy importante tener el nombre de su firebase, porque paa
+facebook tendremos que utilizar el siguiente callback
+
+`https://auth.firebase.com/v2/<aquí el nombre de tu firebase>/auth/facebook/callback`
+
+En nuestro caso:
+
+`https://auth.firebase.com/v2/reto-3-backend/auth/facebook/callback`
 
 ### Creando un Facebook App 
 
-Si vamos a hacer un login con fb primero tendremos que crear una app de FB para eso, así que van a la página de Facebook [Developers][developers.facebook.com] (developers.facebook.com) y le dan a crear nueva app. Como es su primera vez, los guiaré.
+Si vamos a hacer un login con fb primero tendremos que crear una app de FB para eso, así que van a la página de Facebook [Developers]( developers.facebook.com ) (developers.facebook.com) y le dan a crear nueva app. Como es su primera vez, los guiaré.
 
 Tendrán esta vista, vayan a por Website
-![logo](docImg/facebook_new app.png)
+![logo](docImg/facebook_new_app.png)
 
 Luego ponganle el nombre de su nueva app
 
-![logo](docImg/facebook_new app_id.png)
+![logo](docImg/facebook_new_app_id.png)
 
 En la siguiente parte eligan una categoría y denle a Crear App ID.
 
@@ -71,14 +89,36 @@ Aquí seleccionarán Settings (o Ajustes) en el dashboard.
 
 Luego tendrán que llenarlo con la URL que usarán, poner un email de confirmación(para luego poder hacer su app pública y que no sólo la puedan usar ustedes)
 
-- Crear un App Id
--
-## Install
 
-To use this contribution add it to your `~/.spacemacs`
+Ahora entren a opciones Avanzadas, y coloquen el callback en donde se debe:
 
-```elisp
-(setq-default dotspacemacs-configuration-layers '(python)
-  "List of contribution to load."
-)
+![logo](docImg/facebook_app_settings_advanced.png)
+
+Ya están listos para comenzar a usar OAuth en firebase
+
+### CODING TIME
+
+El ejemplo lo tienen arriba, pueden revisar reto.js y reto.css. Si
+tienen dudas pueden revisar la documentación de [firebase](
+https://www.firebase.com/docs/web/guide/login/facebook.html ).
+
+### Conectando a Firebase
+
+Primero hacen la conexión como siempre
+
+`var ref = new Firebase("https://<tu app de firebase aquí>.firebaseio.com")`
+
+luego tienen que meter todas las cosas que pasarán con la autentificación dentro de un callback de esta referencia a la conexión:
+
+``` js
+ref.onAuth(function(authData) {
+    if (authData) {
+        // user authenticated with Firebase
+        (...)
+        }
+    else{
+        // user is logged out
+        (...)
+        }
 ```
+    

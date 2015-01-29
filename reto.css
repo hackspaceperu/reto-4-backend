@@ -1,0 +1,49 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-box-shadow: inset 0px 0px 30px 10px #000;
+  box-shadow: inset 0px 0px 30px 10px #000;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.overlay .content {
+  margin: auto;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 1em;
+  background: rgba(20,20,20,0.55);
+  color: #eaf6f9;
+  text-align: center;
+}
+.overlay .content .logo {
+  max-width: 6.25em;
+  margin: auto;
+}
+.overlay .content .logo img {
+  width: 100%;
+}
+.overlay .message {
+  margin: 0.5em 0;
+}
+.overlay .socials {
+  font-size: 3em;
+}
+.overlay .socials .fa {
+  margin: 0 0.2em;
+  cursor: pointer;
+}
+
+.blur {
+  -webkit-filter: blur(15px);
+}
+.dontDisplay {
+  display: none;
+}
