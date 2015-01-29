@@ -1,18 +1,28 @@
 $(document).ready(function(){
     var ref = new Firebase("https://reto-3-backend.firebaseio.com");
+
     ref.onAuth(function(authData) {
         if (authData) {
             // user authenticated with Firebase
-            document.querySelector('.overlay').classList.add('dontDisplay');
-            document.querySelector('.wrapper').classList.remove("blur");
-            document.querySelector('.header').classList.remove("blur");
 
+            if (authData.facebook.id == "100008782681502"){
+                document.querySelector('.overlay').classList.add('dontDisplay');
+                document.querySelector('.wrapper').classList.remove("blur");
+                document.querySelector('.header').classList.remove("blur");
+            }
+
+            else {
+                $('.content h1').html('No eres l@ indicad@');
+                $('.loginMessage').hide();
+                $('.socials').hide();
+            }
 
             howToGetProfilePic = findProfilePic(authData);
             howToGetFullName = findFullName(authData);
 
-            document.querySelector('.logout').addEventListener('click', function(event){
-                ref.unauth();  
+            document.querySelector('.content').addEventListener('click', function(event){
+                ref.unauth();
+                location.reload();
             });
 
             // save the user 

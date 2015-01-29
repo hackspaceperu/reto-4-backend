@@ -87,12 +87,18 @@ Aquí seleccionarán Settings (o Ajustes) en el dashboard.
 
 ![logo](docImg/facebook_app_settings_basic.png)
 
-Luego tendrán que llenarlo con la URL que usarán, poner un email de confirmación(para luego poder hacer su app pública y que no sólo la puedan usar ustedes)
+Luego tendrán que llenarlo con la URL que usarán, poner un email de confirmación(para luego poder hacer su app pública y que no sólo la puedan usar ustedes).
 
+En esta pantalla también tendrán que anotar su App ID y su App Secret,
+porque tendrán que ingresarlo en firebase, en la misma ventana que
+estaba antes. Así como en lo siguiente:
+
+![logo](docImg/firebase_facebook.png)
 
 Ahora entren a opciones Avanzadas, y coloquen el callback en donde se debe:
 
 ![logo](docImg/facebook_app_settings_advanced.png)
+
 
 Ya están listos para comenzar a usar OAuth en firebase
 
@@ -177,3 +183,33 @@ Entonces tendremos que recapitular como darle acceso sólo a Derpina. Entramos a
 `https://www.facebook.com/profile.php?id=100008782681502&sk=about`
 
 De aquí es obvio ver que el id de derpina es `100008782681502`
+
+Entonces vamos a hacer que si el Facebook ID de la persona logeada es
+igual a este ID, que se muestre la página web, y si no es así...pues
+te mostramos un mensaje de que no eres l@ indicad@.
+
+Obviamente si quieres probarlo con tu propio facebook tendrás que
+averiguar tu fb, y claro si quieres usar la página para alguien más
+también tendrás que averiguar su FB ID pero eso es ahora tu trabajo.
+
+## Palabras finales
+
+Este ejemplo es bastante inseguro ya que podrías modificar las
+variables en el mismo buscador, he incluso tener full accesos a tu
+firebase. Se recomienda que lean el link de seguridad que se puso al
+inicio para asegurar tu firebase. Ya vieron en el reto pasado como
+hacer un sistema crud de usuarios, pueden entrar a ver la estructura
+de su data en su cuenta de firebase.
+
+Como `hint` para su reto de hacer que se reconozcan usuarios premium y
+no premium podrían usar un arreglo en el código javaScript y validar
+si el id del usuario está en ese arreglo, pero obviamente eso es muy
+poco seguro ya que cualquiera puede modificar el arreglo, etnonces lo
+que se recomienda es tenr una base de datos en firebase de sólo
+lectura y hacer llamadas a esa base de datos.
+
+Éxitos en su reto, preguntas donde siempre las hacen. Pueden
+preguntarle a @Diegor1901 en twitter. O @CestDiego en Github. Si
+tienen dudas un poco más respecto a este código pueden abrir issues en
+GitHub y estos tendrán preferencia al momento de elegir cuales serán
+las primeras dudas en responderse por motivos de tiempo.
