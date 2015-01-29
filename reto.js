@@ -4,7 +4,7 @@ ref.onAuth(function(authData) {
         // user authenticated with Firebase
         document.querySelector('.overlay').classList.add('dontDisplay');
         document.querySelector('.wrapper').classList.remove("blur");
-        document.querySelector('header').classList.remove("blur");
+        document.querySelector('.header').classList.remove("blur");
 
 
         howToGetProfilePic = findProfilePic(authData);
