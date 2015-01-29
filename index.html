@@ -3,19 +3,20 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
+  <head>
+
 
     <!-- Basic Page Needs
-    ================================================== -->
+          ================================================== -->
     <meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	  <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
     <title>Derpina & Derp </title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- CSS
-    ================================================== -->
+          ================================================== -->
     <link rel="stylesheet" href="stylesheets/skeleton.css">
     <link rel="stylesheet" href="stylesheets/layout.css">
     <!-- prettyPhoto CSS file -->
@@ -26,25 +27,25 @@
     <link rel="stylesheet" href="stylesheets/jquery.bxslider.css">
 
     <!-- Favicons
-    ================================================== -->
+          ================================================== -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
     <!-- Google Fonts
-    ================================================== -->
+          ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	
+	  
     <!-- JavaScript
-    ================================================== -->
+            ================================================== -->
     <!-- jQuery library (served from Google) -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-	<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+	  <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
     <!-- Modernizr -->
     <script src="js/modernizr.custom.61673.js" type="text/javascript"></script> 
-	<!-- Stellar Javascript file -->
+	  <!-- Stellar Javascript file -->
     <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
     <!-- prettyPhoto Javascript file -->
     <script src="js/jquery.prettyPhoto.js"></script> 
@@ -56,58 +57,71 @@
     <script src="js/main.js"></script>    
 
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
 
     <!-- Por motivos de enseñanza, todo lo que se pone a parte del codigo del template estara aquí -->
+    <script src="https://cdn.firebase.com/js/client/2.0.5/firebase.js"></script>
+    <link href='reto.css' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    rel="stylesheet">
     <script src="reto.js"></script>
-</head>
-<body>
+  </head>
+  <body>
 
-<header>
-    
-<section class="menu">	        
-        <div class="container">
-            <div class="sixteen columns">
-		<!-- Navigation Menu -->
-		<div id="nav">
-			<ul class="navigation">
-			    <li class="current">Menu</li>
-				<li data-slide="1">Home</li>
-				<li data-slide="2">Nuestra Historia</li>
-				<li data-slide="4">Fotos</li>
-			</ul>
-		</div>
-		<!-- Navigation Menu / End -->
-            </div> 
+    <div class="overlay">
+      <div class="content">
+        <h1 class="message">Hola</h1>
+        <div class="message loginMessage">Para desbloquear la pagina por favor logeate</div>
+        <div class="socials">
+          <i class="fa fa-facebook-square"></i>       
+          <!-- <i class="fa fa-twitter-square"></i> -->
         </div>
-</section>        
-</header>
-   
-<div class="wrapper">
-<!-- Home Subpage	   	  
+      </div> 
+      <header class="header blur">
+        <section class="menu">	        
+          <div class="container">
+            <div class="sixteen columns">
+		          <!-- Navigation Menu -->
+		          <div id="nav">
+			          <ul class="navigation">
+			            <li class="current">Menu</li>
+				          <li data-slide="1">Home</li>
+				          <li data-slide="2">Nuestra Historia</li>
+				          <li data-slide="4">Fotos</li>
+			          </ul>
+		          </div>
+		          <!-- Navigation Menu / End -->
+            </div> 
+          </div>
+        </section>        
+      </header>
+    </div>
+    
+    <div class="wrapper blur">
+      <!-- Home Subpage	   	  
 =========================================== -->	
-<section class="slide" id="home" data-slide="1">
-	<div class="container">
-	    <div class="sixteen columns">
-                <!-- Top titles -->
-                <div class="top_titles">
-                    <h2 class="header_title">Felices 2 años y dos meses juntos</h2> 
+      <section class="slide" id="home" data-slide="1">
+	  <div class="container">
+	  <div class="sixteen columns">
+  <!-- Top titles -->
+  <div class="top_titles">
+  <h2 class="header_title">Felices 2 años y dos meses juntos</h2> 
                     <h2 class="header_title">Jueves, 31.41516 de Febrero 2015</h2> 
                     <h1 class="main_title">Derpina & Derp</h1>
                 </div> 
                    
                 <!-- Main Fotos -->
                 <div class="main_photos">
-                    <ul class="main_photos_ul">
-                       <li class="main_photo">
-                          <img src="images/main_photo_1.jpg" alt="" />							  
+  <ul class="main_photos_ul">
+  <li class="main_photo">
+  <img src="images/main_photo_1.jpg" alt="" />							  
 					   </li>
                        <li class="heart">
-					      <img src="images/heart_img.png" alt="" />
+					  <img src="images/heart_img.png" alt="" />
 					   </li> 
                        <li>
-					      <img src="images/main_photo_2.jpg" alt="" />
+					  <img src="images/main_photo_2.jpg" alt="" />
 					   </li> 
                     </ul> 
                 </div>                             
@@ -115,71 +129,71 @@
 	</div>
 </section>
 
-</section>
+        </section>
 <!-- Our Story Subpage	   	  
 =========================================== -->	 
 <section class="slide" id="our_story" data-slide="2">
-	<div class="container">
-            <div class="sixteen columns">
-                <!-- Our Story Subpage Title -->
-                <h1 class="subpage_title">Nuestra Historia</h1>
+	  <div class="container">
+  <div class="sixteen columns">
+  <!-- Our Story Subpage Title -->
+  <h1 class="subpage_title">Nuestra Historia</h1>
             </div>
  
             <div class="five columns row">
-                <!-- Our Story Info -->         
-                <h2 class="our_story_title">Derp</h2>
+  <!-- Our Story Info -->         
+  <h2 class="our_story_title">Derp</h2>
                 <div class="our_story_info">
-                  <p>lorem ipsum dolorum perso almen us note laborum
-                  no seas pulpinum yaest ate tranquilum asdaslorem
-                  ipsum dolorum perso almen us note laborum no seas
-                  pulpinum yaest ate tranquilum lorem ipsum dolorum
-                  perso almen us note laborum no seas pulpinum yaest
-                  ate tranquilum lorem ipsum dolorum perso almen us
-                  note laborum no seas pulpinum yaest ate tranquilum
-                  lorem ipsum dolorum perso almen us note laborum no
-                  seas pulpinum yaest ate tranquilum lorem ipsum
-                  dolorum perso almen us note laborum no seas pulpinum
-                  yaest ate tranquilum lorem ipsum dolorum perso almen
-                  us note laborum no seas pulpinum yaest ate
-                  tranquilum lorem ipsum dolorum perso almen us note
-                  laborum no seas pulpinum yaest ate tranquilum lorem
-                  ipsum dolorum perso almen us note laborum no seas
-                  pulpinum yaest ate tranquilum lorem ipsum dolorum
-                  perso almen us note laborum no seas pulpinum yaest
-                  ate tranquilum 
+  <p>lorem ipsum dolorum perso almen us note laborum
+  no seas pulpinum yaest ate tranquilum asdaslorem
+  ipsum dolorum perso almen us note laborum no seas
+  pulpinum yaest ate tranquilum lorem ipsum dolorum
+  perso almen us note laborum no seas pulpinum yaest
+  ate tranquilum lorem ipsum dolorum perso almen us
+  note laborum no seas pulpinum yaest ate tranquilum
+  lorem ipsum dolorum perso almen us note laborum no
+  seas pulpinum yaest ate tranquilum lorem ipsum
+  dolorum perso almen us note laborum no seas pulpinum
+  yaest ate tranquilum lorem ipsum dolorum perso almen
+  us note laborum no seas pulpinum yaest ate
+  tranquilum lorem ipsum dolorum perso almen us note
+  laborum no seas pulpinum yaest ate tranquilum lorem
+  ipsum dolorum perso almen us note laborum no seas
+  pulpinum yaest ate tranquilum lorem ipsum dolorum
+  perso almen us note laborum no seas pulpinum yaest
+  ate tranquilum 
                   </p>
                 </div>                    
 	        </div>      
 
 	        <div class="six columns row"> 
-                <!-- Our Story Photo -->
-                <div class="our_story_photo">
-                    <img src="images/our_story_img.jpg" alt="" />
+  <!-- Our Story Photo -->
+  <div class="our_story_photo">
+  <img src="images/our_story_img.jpg" alt="" />
                 </div>                             
 	        </div> 
         
 	        <div class="five columns row">         
-                <h2 class="our_story_title">Derpina</h2>
+  <h2 class="our_story_title">Derpina</h2>
                 <!-- Our Story Info -->
                 <div class="our_story_info">
-                  <p>lorem ipsum dolorum perso almen us note laborum
-                  no seas pulpinum yaest ate tranquilum asdaslorem
-                  ipsum dolorum perso almen us note laborum no seas
-                  pulpinum yaest ate tranquilum lorem ipsum dolorum
-                  perso almen us note laborum no seas pulpinum yaest
-                  ate tranquilum lorem ipsum dolorum perso almen us
-                  note laborum no seas pulpinum yaest ate tranquilum
-                  lorem ipsum dolorum perso almen us note laborum no
-                  seas pulpinum yaest ate tranquilum lorem ipsum
-                  dolorum perso almen us note laborum no seas pulpinum
-                  yaest ate tranquilum lorem ipsum dolorum perso almen
-                  us note laborum no seas pulpinum yaest ate
-                  tranquilum lorem ipsum dolorum perso almen us note
-                  laborum no seas pulpinum yaest ate tranquilum lorem
-                  ipsum dolorum perso almen us note laborum no seas
-                  pulpinum yaest ate tranquilum lorem ipsum dolorum
-                  perso almen us note laborum no seas pulpinum yaest
-                  ate tranquilum 
+  <p>lorem ipsum dolorum perso almen us note laborum
+  no seas pulpinum yaest ate tranquilum asdaslorem
+  ipsum dolorum perso almen us note laborum no seas
+  pulpinum yaest ate tranquilum lorem ipsum dolorum
+  perso almen us note laborum no seas pulpinum yaest
+  ate tranquilum lorem ipsum dolorum perso almen us
+  note laborum no seas pulpinum yaest ate tranquilum
+  lorem ipsum dolorum perso almen us note laborum no
+  seas pulpinum yaest ate tranquilum lorem ipsum
+  dolorum perso almen us note laborum no seas pulpinum
+  yaest ate tranquilum lorem ipsum dolorum perso almen
+  us note laborum no seas pulpinum yaest ate
+  tranquilum lorem ipsum dolorum perso almen us note
+  laborum no seas pulpinum yaest ate tranquilum lorem
+  ipsum dolorum perso almen us note laborum no seas
+  pulpinum yaest ate tranquilum lorem ipsum dolorum
+  perso almen us note laborum no seas pulpinum yaest
+  ate tranquilum 
                   </p>
                 </div>       
 	        </div> 
@@ -189,36 +203,36 @@
 <!-- Fotos Subpage	   	  
 =========================================== -->	
 <section class="slide" id="photos" data-slide="4">
-	<div class="container">
-            <div class="sixteen columns">
-                <!-- Fotos Subpage Title -->
-                <h1 class="subpage_title">Fotos</h1>
+	  <div class="container">
+  <div class="sixteen columns">
+  <!-- Fotos Subpage Title -->
+  <h1 class="subpage_title">Fotos</h1>
 	    </div>
 
             <div class="sixteen columns">
-                <!-- Fotos -->
-                <ul class="bxslider photos">
-                   <li>
-                       <!-- Photo 1 -->
-                       <div class="one-third column omega">
-                           <a href="images/photos/big/photo1.jpg" data-rel="prettyPhoto[photos]">
-                             <img src="images/photos/photo1.jpg" alt=""/>
+  <!-- Fotos -->
+  <ul class="bxslider photos">
+  <li>
+  <!-- Photo 1 -->
+  <div class="one-third column omega">
+  <a href="images/photos/big/photo1.jpg" data-rel="prettyPhoto[photos]">
+  <img src="images/photos/photo1.jpg" alt=""/>
                            </a>
                        </div>
                        <!-- End Photo 1 -->
 
                        <!-- Photo 2 -->
 		               <div class="one-third column omega">
-                           <a href="images/photos/big/photo2.jpg" data-rel="prettyPhoto[photos]">
-                             <img src="images/photos/photo2.jpg" alt=""/>
+  <a href="images/photos/big/photo2.jpg" data-rel="prettyPhoto[photos]">
+  <img src="images/photos/photo2.jpg" alt=""/>
                            </a>
 		               </div>
                        <!-- Photo 2 -->
 
                        <!-- Phtot 3 -->
 		               <div class="one-third column omega"> 
-                           <a href="images/photos/big/photo3.jpg" data-rel="prettyPhoto[photos]"> 
-                             <img src="images/photos/photo3.jpg" alt=""/>
+  <a href="images/photos/big/photo3.jpg" data-rel="prettyPhoto[photos]"> 
+  <img src="images/photos/photo3.jpg" alt=""/>
                            </a>
 		               </div>
                        <!-- Photo 3 -->
@@ -229,10 +243,10 @@
 	</div>	
 </section>
 
-</div>
+    </div>
 <!-- End Wrapper -->
- 
+
 <!-- End Document
 ================================================== -->
-</body>
+  </body>
 </html>

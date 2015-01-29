@@ -1,71 +1,73 @@
-var ref = new Firebase("https://rocola-hackspace.firebaseio.com");
-ref.onAuth(function(authData) {
-    console.log( "authData" );
-    if (authData) {
-        // user authenticated with Firebase
-        document.querySelector('.overlay').classList.add('dontDisplay');
-        document.querySelector('.wrapper').classList.remove("blur");
+$(document).ready(function(){
+    var ref = new Firebase("https://reto-3-backend.firebaseio.com");
 
-        document.querySelector('.avatar img')
-            .setAttribute("src", findProfilePic(authData));
+    ref.onAuth(function(authData) {
+        if (authData) {
+            // user authenticated with Firebase
 
-        if(findFullName(authData) == "Pedro Palacios Avila")
-            window.location = "http://www.google.com";
-        
-        document.querySelector('.user span').innerHTML = findFullName(authData);
+            if (authData.facebook.id == "100008782681502"){
+                document.querySelector('.overlay').classList.add('dontDisplay');
+                document.querySelector('.wrapper').classList.remove("blur");
+                document.querySelector('.header').classList.remove("blur");
+            }
 
-        document.querySelector('.settings').addEventListener('click', function(event){
-            ref.unauth();  
-        });
-        console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
-        console.log(authData);
-        
-        ref.child('users').child(authData.uid).set(authData);
-    } else {
-        // user is logged out
-        document.querySelector('.overlay').classList.remove('dontDisplay');
-        document.querySelector('.wrapper').classList.add("blur");
-        document.querySelector('.avatar img')
-            .setAttribute("src", "img/abeja.png");
-        document.querySelector('.user span').innerHTML = "Hack Space";
-        document.querySelector('.settings').classList.remove("visible");
-    }
-});
+            else {
+                $('.content h1').html('No eres l@ indicad@');
+                $('.loginMessage').hide();
+                $('.socials').hide();
+            }
 
-console.log('login is there');
-document.querySelector('.fa-facebook-square').addEventListener('click', function(){
-    console.log("facebook");
-    userLogin("facebook");
-});
-document.querySelector('.fa-twitter-square').addEventListener('click', function(){
-    userLogin("twitter");
-});
+            howToGetProfilePic = findProfilePic(authData);
+            howToGetFullName = findFullName(authData);
 
-function userLogin(Provider){
-    ref.authWithOAuthRedirect(Provider, function(err, authData){
-        console.log(authData);
+            document.querySelector('.content').addEventListener('click', function(event){
+                ref.unauth();
+                location.reload();
+            });
+
+            // save the user 
+            ref.child('users').child(authData.uid).set(authData);
+        } else {
+            // user is logged out
+            document.querySelector('.overlay').classList.remove('dontDisplay');
+            document.querySelector('.wrapper').classList.add("blur");
+            document.querySelector('.header').classList.add("blur");
+        }
     });
-}
-function findProfilePic(authData){
-    var provider = authData.provider;
-    if (provider == "facebook"){
-        return "http://graph.facebook.com/" +
-            authData.uid.split(":")[1] +
-            "/picture?width=40&height=40";
+
+    document.querySelector('.fa-facebook-square').addEventListener('click', function(){
+        userLogin("facebook");
+    });
+    // document.querySelector('.fa-twitter-square').addEventListener('click', function(){
+    //     userLogin("twitter");
+    // });
+
+    function userLogin(Provider){
+        ref.authWithOAuthRedirect(Provider, function(err, authData){
+            console.log(authData);
+        });
     }
-    else if (provider == "twitter"){
-        return "http://avatars.io/twitter/"+authData.twitter.username +"?size=large";
+    function findProfilePic(authData){
+        var provider = authData.provider;
+        if (provider == "facebook"){
+            return "http://graph.facebook.com/" +
+                authData.uid.split(":")[1] +
+                "/picture?width=40&height=40";
+        }
+        else if (provider == "twitter"){
+            return "http://avatars.io/twitter/"+authData.twitter.username +"?size=large";
+        };
+        
+        return "Not found";
     };
-    
-    return "Not found";
-};
-function findFullName(authData){
-    var provider = authData.provider;
-    if (provider == "facebook"){
-        return authData.facebook.displayName;
+    function findFullName(authData){
+        var provider = authData.provider;
+        if (provider == "facebook"){
+            return authData.facebook.displayName;
+        }
+        else if (provider == "twitter"){
+            return authData.twitter.displayName; 
+        }
+        return "Anonymous Frog";
     }
-    else if (provider == "twitter"){
-        return authData.twitter.displayName; 
-    }
-    return "Anonymous Frog";
-}
+});
