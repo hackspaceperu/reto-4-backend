@@ -108,17 +108,72 @@ Primero hacen la conexión como siempre
 
 `var ref = new Firebase("https://<tu app de firebase aquí>.firebaseio.com")`
 
-luego tienen que meter todas las cosas que pasarán con la autentificación dentro de un callback de esta referencia a la conexión:
+Luego usando este objeto `ref` podremos recibir el resultado de una autentificación con OAuth.
+
 
 ``` js
 ref.onAuth(function(authData) {
     if (authData) {
         // user authenticated with Firebase
         (...)
+        (cosas que pasarán cuando estes logeado)
+
+        // save the user 
+        ref.child('users').child(authData.uid).set(authData);
         }
     else{
         // user is logged out
         (...)
+        (cosas que pasarán cuando te deslogees)
         }
 ```
+
+Por ahora sólo es necesario que entiendas la estructura general
+
+### Configurando el Login
+
+Ahora que ya tienen una idea de que pasa en el bucle de logeo, es hora
+de llamar a la función de logeo, obviamente quieren que esto esté
+ligado a alguna acción del usuario, como por ejemplo darle click al
+botón de facebook. Nosotros tenemos configurado un overlay en nuestra
+aplicación web que simplemente son trucos de html y css, pueden
+checkear reto.css y index.html para más información sobre este overlay.
     
+![logo](docImg/overlay.png)
+
+Usaremos JavaScript Puro para que funcione el botón de facebook.
+
+```js
+document.querySelector('.fa-facebook-square').addEventListener('click', function(){
+    ref.authWithOAuthRedirect('facebook', function(err, authData){
+        console.log(authData);
+    });
+});
+```
+
+Verán que en nuestro repo no está exactamente así, sino que hay una
+abstracción de la función de userLogin. Es una pista para ver cómo
+implementarían su logeo con twitter.
+
+Ahora cada vez que den click en el botón de facebook les saltará la
+ventana de logeo con facebook y si es exitosa, entonces el bucle
+dentro de `if(authData)` se ejecutará, pueden tener lo que quieran
+aquí, mostrar algo, redireccionar, poner el nombre del usuario en
+algún lado, obtener su imágen de perfil, etc. No está implementado
+aquí, pero ahí les dejamos las funciones que podrían usar para ello.
+
+### Limitando acceso sólo a Derpina
+
+Cuando un usuario se logea en tu página web, y se guarda en tu base de
+datos de firebase, también se guardan cosas importantes para
+reconocerlo en facebook, algo muy importante es su Facebook ID. Cuando
+obtengas la authData de un usuario, esa información la encontrarás en
+`authData.facebook.id` o `authData.twitter.id` acordemente.
+
+Entonces tendremos que recapitular como darle acceso sólo a Derpina. Entramos al perfil de Derpina y vemos esto en la url:
+
+![logo](docImg/derpina.png)
+
+`https://www.facebook.com/profile.php?id=100008782681502&sk=about`
+
+De aquí es obvio ver que el id de derpina es `100008782681502`
