@@ -3,9 +3,17 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 **Table of Contents**
 
-- [Python contribution layer for Spacemacs](#python-contribution-layer-for-spacemacs)
-    - [Description](#description)
-    - [Install](#install)
+- [Implementación de OAuth con Firebase](#implementacin-de-oauth-con-firebase)
+    - [Recapitulando](#recapitulando)
+    - [Entregable](#entregable)
+    - [Haciendo una página web para Manuel@ (O tu persona especial de elección)](#haciendo-una-pgina-web-para-manuel-o-tu-persona-especial-de-eleccin)
+        - [Creando tu Firebase App](#creando-tu-firebase-app)
+        - [Creando un Facebook App](#creando-un-facebook-app)
+        - [CODING TIME](#coding-time)
+        - [Conectando a Firebase](#conectando-a-firebase)
+        - [Configurando el Login](#configurando-el-login)
+        - [Limitando acceso sólo a Derpina](#limitando-acceso-slo-a-derpina)
+    - [Palabras finales](#palabras-finales)
 
 <!-- markdown-toc end -->
 ## Recapitulando
@@ -212,4 +220,4 @@ lectura y hacer llamadas a esa base de datos.
 preguntarle a @Diegor1901 en twitter. O @CestDiego en Github. Si
 tienen dudas un poco más respecto a este código pueden abrir issues en
 GitHub y estos tendrán preferencia al momento de elegir cuales serán
-las primeras dudas en responderse por motivos de tiempo.
+.
