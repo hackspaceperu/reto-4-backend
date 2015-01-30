@@ -111,6 +111,11 @@ Ahora entren a opciones Avanzadas, y coloquen el callback en donde se debe:
 ![logo](docImg/facebook_app_settings_advanced.png)
 
 
+Para que su app de facebook sea pública, tendrán que haber puesto su
+correo en la pantalla de configuraciones básicas (Basic Settings). Si ya lo hicieron, entonces tendrán que ir a "Status & Review" en el dashboard de la izquierda y luego podrán tener un toggle para activar públicamente su aplicación de facebook. SI no pueden cambiar este toggle es porque no han puesto una dirección de correo válida.
+
+![logo](docImg/facebook_app_public.png)
+
 Ya están listos para comenzar a usar OAuth en firebase
 
 ### CODING TIME
@@ -126,7 +131,6 @@ Primero hacen la conexión como siempre
 `var ref = new Firebase("https://<tu app de firebase aquí>.firebaseio.com")`
 
 Luego usando este objeto `ref` podremos recibir el resultado de una autentificación con OAuth.
-
 
 ``` js
 ref.onAuth(function(authData) {
